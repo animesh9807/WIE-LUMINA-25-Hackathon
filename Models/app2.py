@@ -3,9 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 import random
-# --------------------------
-# Sample training data
-# --------------------------
+
 data = [
     # Original 21
     ("Get free money now", 'spam'),
@@ -215,37 +213,34 @@ for _ in range(50):
 # Shuffle to mix spam/ham
 random.shuffle(new_data)
 
-# Add to existing data
+
 data.extend(new_data)
 
 X_train = [message for message, label in data]
 y_train = [label for message, label in data]
 
-# --------------------------
-# Build pipeline
-# --------------------------
+
+
 spam_classifier_pipeline = Pipeline([
     ('vectorizer', TfidfVectorizer()),
     ('classifier', MultinomialNB())
 ])
 
-# Train model
 spam_classifier_pipeline.fit(X_train, y_train)
 
-# --------------------------
 # Streamlit UI
-# --------------------------
+
 st.title("Spam vs Ham Classifier 📨")
 st.markdown("Type a message below and see if it's **SPAM** or **HAM**.")
 
-# Text input
+
 user_input = st.text_area("Enter your message here:")
 
 if st.button("Classify Message"):
     if not user_input.strip():
         st.warning("Please enter a message to classify.")
     else:
-        # Predict label
+        
         prediction = spam_classifier_pipeline.predict([user_input])[0]
         st.write(f"**Prediction:** {prediction.upper()}")
 
@@ -261,3 +256,4 @@ if st.button("Classify Message"):
             st.error("Action: Flag comment as spam or hold for moderation.")
         else:
             st.success("Action: Approve comment and post.")
+
