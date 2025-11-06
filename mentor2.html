@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Mentors - JIIT Alumni Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5dc;
+            color: #4b3621;
+        }
+    </style>
+</head>
+<body class="bg-stone-100 text-stone-800">
+
+    <!-- Navbar -->
+    <nav class="bg-stone-200 shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-3xl font-bold text-stone-800">JIIT Alumni Connect</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#" class="text-stone-700 hover:text-stone-900 px-3 py-2 rounded-md text-base font-medium transition duration-300">Home</a>
+                            <a href="#" class="text-stone-700 hover:text-stone-900 px-3 py-2 rounded-md text-base font-medium transition duration-300">My Profile</a>
+                            <a href="#" class="text-stone-700 hover:text-stone-900 px-3 py-2 rounded-md text-base font-medium transition duration-300">Find Mentors</a>
+                            <a href="#" class="text-stone-700 hover:text-stone-900 px-3 py-2 rounded-md text-base font-medium transition duration-300">Jobs & Internships</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button class="bg-stone-800 text-white px-6 py-3 rounded-full text-base font-medium hover:bg-stone-900 transition duration-300 transform hover:scale-105">Log Out</button>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-stone-600 hover:text-stone-900 hover:bg-stone-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-stone-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="text-stone-700 hover:bg-stone-300 hover:text-stone-900 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#" class="text-stone-700 hover:bg-stone-300 hover:text-stone-900 block px-3 py-2 rounded-md text-base font-medium">My Profile</a>
+                <a href="#" class="text-stone-700 hover:bg-stone-300 hover:text-stone-900 block px-3 py-2 rounded-md text-base font-medium">Find Mentors</a>
+                <a href="#" class="text-stone-700 hover:bg-stone-300 hover:text-stone-900 block px-3 py-2 rounded-md text-base font-medium">Jobs & Internships</a>
+                <button class="w-full bg-stone-800 text-white px-4 py-2 rounded-full text-base font-medium hover:bg-stone-900 transition duration-300">Log Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-bold text-stone-900 mb-8 text-center">Find Your Mentor</h1>
+        
+        <!-- Search and Filter Section -->
+        <div class="bg-stone-200 rounded-3xl shadow-xl p-6 mb-8 flex flex-col md:flex-row items-center md:space-x-4">
+            <div class="relative flex-1 w-full">
+                <input id="search-input" type="text" placeholder="Search mentors by name, company, or skills..." class="w-full p-3 pl-10 rounded-xl border border-stone-400 bg-stone-300 text-stone-800 focus:ring-stone-500 focus:border-stone-500 focus:outline-none transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-stone-600">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+            <select id="filter-select" class="w-full md:w-auto p-3 rounded-xl border border-stone-400 bg-stone-300 text-stone-800 focus:ring-stone-500 focus:border-stone-500 focus:outline-none transition duration-300 mt-4 md:mt-0">
+                <option value="all">Filter by Industry</option>
+                <option value="Technology">Technology</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Entrepreneurship">Entrepreneurship</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+            </select>
+        </div>
+
+        <!-- Mentors Grid -->
+        <div id="mentors-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Mentor cards will be dynamically inserted here -->
+        </div>
+
+        <!-- No results message -->
+        <div id="no-results" class="hidden text-center mt-12">
+            <h2 class="text-2xl font-semibold text-stone-700">No mentors found.</h2>
+            <p class="mt-2 text-stone-600">Please try a different search or filter.</p>
+        </div>
+    </main>
+    
+    <script>
+        const mentors = [
+            {
+                name: "Anjali Singh",
+                role: "Software Engineer",
+                company: "Google",
+                batch: "2018",
+                skills: ["Python", "AI/ML", "Data Science"],
+                industry: "Technology",
+                imageUrl: "https://placehold.co/120x120/4B3621/F5F5DC?text=AS"
+            },
+            {
+                name: "Rajesh Kumar",
+                role: "Product Manager",
+                company: "Flipkart",
+                batch: "2015",
+                skills: ["Product Management", "Agile", "UI/UX"],
+                industry: "Technology",
+                imageUrl: "https://placehold.co/120x120/4B3621/F5F5DC?text=RK"
+            },
+            {
+                name: "Neha Mehta",
+                role: "Data Scientist",
+                company: "Amazon",
+                batch: "2019",
+                skills: ["Data Science", "Machine Learning", "Python"],
+                industry: "Data Science",
+                imageUrl: "https://placehold.co/120x120/4B3621/F5F5DC?text=NM"
+            },
+            {
+                name: "Vikram Reddy",
+                role: "Founder & CEO",
+                company: "InnovateX",
+                batch: "2012",
+                skills: ["Entrepreneurship", "Venture Capital", "Leadership"],
+                industry: "Entrepreneurship",
+                imageUrl: "https://placehold.co/120x120/4B3621/F5F5DC?text=VR"
+            },
+            {
+                name: "Simran Kaur",
+                role: "UX/UI Designer",
+                company: "Microsoft",
+                batch: "2020",
+                skills: ["UI/UX Design", "Figma", "Prototyping"],
+                industry: "UI/UX Design",
+                imageUrl: "https://placehold.co/120x120/4B3621/F5F5DC?text=SK"
+            },
+            {
+                name: "Ayan Mukherjee",
+                role: "Senior Data Analyst",
+                company: "Accenture",
+                batch: "2017",
+                skills: ["Data Analysis", "SQL", "Power BI"],
+                industry: "Data Science",
+                imageUrl: "https://placehold.co/120x120/4B3621/F5F5DC?text=AM"
+            },
+            {
+                name: "Pooja Sharma",
+                role: "Digital Marketing Specialist",
+                company: "CreativeHub",
+                batch: "2016",
+                skills: ["SEO", "Content Strategy", "Social Media Marketing"],
+                industry: "Marketing",
+                imageUrl: "https://placehold.co/120x120/4B3621/F5F5DC?text=PS"
+            },
+            {
+                name: "Arjun Das",
+                role: "Financial Analyst",
+                company: "Capital Ventures",
+                batch: "2014",
+                skills: ["Financial Modeling", "Investment Banking", "Mergers & Acquisitions"],
+                industry: "Finance",
+                imageUrl: "https://placehold.co/120x120/4B3621/F5F5DC?text=AD"
+            },
+            {
+                name: "Sneha Singh",
+                role: "Machine Learning Engineer",
+                company: "Cognitive AI",
+                batch: "2021",
+                skills: ["Computer Vision", "NLP", "TensorFlow"],
+                industry: "Technology",
+                imageUrl: "https://placehold.co/120x120/4B3621/F5F5DC?text=SS"
+            },
+            {
+                name: "Karan Joshi",
+                role: "UX Researcher",
+                company: "ProDesign Labs",
+                batch: "2019",
+                skills: ["User Research", "Prototyping", "Product Design"],
+                industry: "UI/UX Design",
+                imageUrl: "https://placehold.co/120x120/4B3621/F5F5DC?text=KJ"
+            }
+        ];
+
+        const mentorsGrid = document.getElementById('mentors-grid');
+        const searchInput = document.getElementById('search-input');
+        const filterSelect = document.getElementById('filter-select');
+        const noResultsMessage = document.getElementById('no-results');
+
+        function renderMentors(filteredMentors) {
+            mentorsGrid.innerHTML = '';
+            if (filteredMentors.length === 0) {
+                noResultsMessage.classList.remove('hidden');
+            } else {
+                noResultsMessage.classList.add('hidden');
+                filteredMentors.forEach(mentor => {
+                    const mentorCard = document.createElement('div');
+                    mentorCard.className = 'bg-stone-200 rounded-3xl shadow-xl p-6 flex flex-col items-center text-center';
+                    mentorCard.innerHTML = `
+                        <img src="${mentor.imageUrl}" alt="${mentor.name}" class="rounded-full border-4 border-stone-400 mb-4">
+                        <h3 class="text-2xl font-bold text-stone-900">${mentor.name}</h3>
+                        <p class="text-lg text-stone-700">${mentor.role} at ${mentor.company}</p>
+                        <p class="text-sm text-stone-600 mt-1">Batch of ${mentor.batch}</p>
+                        <div class="flex flex-wrap justify-center gap-2 mt-4">
+                            ${mentor.skills.map(skill => `<span class="bg-stone-300 text-stone-800 px-3 py-1 rounded-full text-xs">${skill}</span>`).join('')}
+                        </div>
+                        <button class="mt-6 w-full bg-stone-800 text-white px-6 py-3 rounded-full text-base font-medium hover:bg-stone-900 transition duration-300 transform hover:scale-105">Connect</button>
+                    `;
+                    mentorsGrid.appendChild(mentorCard);
+                });
+            }
+        }
+
+        function filterAndSearchMentors() {
+            const query = searchInput.value.toLowerCase();
+            const industry = filterSelect.value;
+            
+            const filteredMentors = mentors.filter(mentor => {
+                const matchesSearch = mentor.name.toLowerCase().includes(query) ||
+                                      mentor.role.toLowerCase().includes(query) ||
+                                      mentor.company.toLowerCase().includes(query) ||
+                                      mentor.skills.some(skill => skill.toLowerCase().includes(query));
+                
+                const matchesFilter = industry === 'all' || mentor.industry === industry;
+                
+                return matchesSearch && matchesFilter;
+            });
+
+            renderMentors(filteredMentors);
+        }
+
+        searchInput.addEventListener('input', filterAndSearchMentors);
+        filterSelect.addEventListener('change', filterAndSearchMentors);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMentors(mentors);
+        });
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
