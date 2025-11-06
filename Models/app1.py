@@ -3,9 +3,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-# --------------------------
-# Larger Sample Dataset
-# --------------------------
+
 data = {
     'id': [f'item-{i}' for i in range(1, 202)],
     'title': [
@@ -429,15 +427,15 @@ data = {
 
 df = pd.DataFrame(data)
 
-# --------------------------
+
 # TF-IDF vectorizer
-# --------------------------
+
 tfidf = TfidfVectorizer(stop_words='english')
 tfidf_matrix = tfidf.fit_transform(df['content'])
 
-# --------------------------
+
 # Recommendation Function
-# --------------------------
+
 def get_recommendations_by_keyword(keyword, tfidf=tfidf, tfidf_matrix=tfidf_matrix, df=df):
     if not keyword.strip():
         return "Please enter a keyword or phrase."
@@ -455,9 +453,9 @@ def get_recommendations_by_keyword(keyword, tfidf=tfidf, tfidf_matrix=tfidf_matr
         })
     return recommendations
 
-# --------------------------
+
 # Streamlit UI
-# --------------------------
+
 st.title("Keyword-Based Recommendation System 🧠")
 
 st.header("Type a keyword or phrase to get recommendations")
