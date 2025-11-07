@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - JIIT Alumni Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-stone-100 text-stone-800">
+
+    <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-stone-200 rounded-3xl shadow-xl p-8 max-w-md w-full">
+            <h2 class="text-4xl font-bold text-stone-900 text-center mb-4">JIIT Alumni Connect</h2>
+            <p class="text-center text-lg text-stone-600 mb-8">Login to your account</p>
+
+            <!-- Login Form -->
+            <form class="space-y-6">
+                <!-- Student Login Section -->
+                <div>
+                    <h3 class="text-xl font-bold text-stone-800 mb-2">Student Login</h3>
+                    <input type="email" placeholder="College Email (e.g. username@jiit.ac.in)" class="w-full p-3 rounded-xl border border-stone-400 bg-stone-300 text-stone-800 focus:ring-stone-500 focus:border-stone-500 focus:outline-none transition duration-300">
+                    <button type="submit" class="w-full mt-4 bg-stone-800 text-white font-semibold py-3 px-8 rounded-full hover:bg-stone-900 transition duration-300 transform hover:scale-105">Request OTP</button>
+                </div>
+
+                <div class="relative flex items-center">
+                    <div class="flex-grow border-t border-stone-400"></div>
+                    <span class="flex-shrink mx-4 text-stone-600">OR</span>
+                    <div class="flex-grow border-t border-stone-400"></div>
+                </div>
+
+                <!-- Alumni Login Section -->
+                <div>
+                    <h3 class="text-xl font-bold text-stone-800 mb-2">Alumni Login</h3>
+                    <input type="email" placeholder="Personal Gmail" class="w-full p-3 rounded-xl border border-stone-400 bg-stone-300 text-stone-800 focus:ring-stone-500 focus:border-stone-500 focus:outline-none transition duration-300 mb-4">
+                    <input type="text" placeholder="LinkedIn Profile URL" class="w-full p-3 rounded-xl border border-stone-400 bg-stone-300 text-stone-800 focus:ring-stone-500 focus:border-stone-500 focus:outline-none transition duration-300">
+                    <button type="submit" class="w-full mt-4 bg-stone-800 text-white font-semibold py-3 px-8 rounded-full hover:bg-stone-900 transition duration-300 transform hover:scale-105">Request OTP</button>
+                </div>
+            </form>
+
+            <p class="mt-8 text-center text-sm text-stone-600">
+                New to the platform?
+                <a href="#" class="font-semibold text-stone-800 hover:text-stone-900 transition duration-300">Register here</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

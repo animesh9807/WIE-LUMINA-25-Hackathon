@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Alumni Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-stone-100 text-stone-800">
+
+    <!-- Navbar -->
+    <nav class="bg-stone-200 shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-3xl font-bold text-stone-800">Alumni Connect</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#" class="text-stone-700 hover:text-stone-900 px-3 py-2 rounded-md text-base font-medium transition duration-300">Home</a>
+                            <a href="#" class="text-stone-700 hover:text-stone-900 px-3 py-2 rounded-md text-base font-medium transition duration-300">My Profile</a>
+                            <a href="#" class="text-stone-700 hover:text-stone-900 px-3 py-2 rounded-md text-base font-medium transition duration-300">Find Mentors</a>
+                            <a href="#" class="text-stone-700 hover:text-stone-900 px-3 py-2 rounded-md text-base font-medium transition duration-300">Jobs & Internships</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button class="bg-stone-800 text-white px-6 py-3 rounded-full text-base font-medium hover:bg-stone-900 transition duration-300 transform hover:scale-105">Log Out</button>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-stone-600 hover:text-stone-900 hover:bg-stone-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-stone-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="text-stone-700 hover:bg-stone-300 hover:text-stone-900 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#" class="text-stone-700 hover:bg-stone-300 hover:text-stone-900 block px-3 py-2 rounded-md text-base font-medium">My Profile</a>
+                <a href="#" class="text-stone-700 hover:bg-stone-300 hover:text-stone-900 block px-3 py-2 rounded-md text-base font-medium">Find Mentors</a>
+                <a href="#" class="text-stone-700 hover:bg-stone-300 hover:text-stone-900 block px-3 py-2 rounded-md text-base font-medium">Jobs & Internships</a>
+                <button class="w-full bg-stone-800 text-white px-4 py-2 rounded-full text-base font-medium hover:bg-stone-900 transition duration-300">Log Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Dashboard Content -->
+    <main id="main-dashboard-view" class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-10">
+
+        <!-- Main Content Area (Feed & Post) -->
+        <div class="flex-1">
+            <div class="bg-stone-200 rounded-3xl shadow-xl p-8 mb-8">
+                <div class="flex items-center space-x-6 mb-4">
+                    <img src="https://placehold.co/60x60/4B3621/F5F5DC?text=S" alt="Profile" class="rounded-full border-2 border-stone-800">
+                    <button id="open-post-modal" class="flex-1 text-left text-stone-600 p-4 rounded-3xl border border-stone-400 bg-stone-300 hover:bg-stone-400 transition duration-300">What's on your mind?</button>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold mb-6 text-stone-800">Community Feed</h2>
+
+            <!-- Sample Post 1 (Alumni Job Post) -->
+            <div class="bg-stone-200 rounded-3xl shadow-xl p-8 mb-8">
+                <div class="flex items-center space-x-6 mb-4">
+                    <img src="https://placehold.co/60x60/4B3621/F5F5DC?text=A1" alt="Alumni Profile" class="rounded-full border-2 border-stone-800">
+                    <div>
+                        <h4 class="font-semibold text-stone-800">Jane Doe</h4>
+                        <p class="text-sm text-stone-600">Alumni '10, Senior Software Engineer at TechCorp</p>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-stone-900">Hiring Interns for Summer 2025!</h3>
+                <p id="post-text-1" class="text-stone-800 mb-4 leading-relaxed break-words">
+                    TechCorp is looking for passionate and driven computer science students for a paid summer internship. We have openings in backend development, data science, and mobile app development. Check the link below to apply!
+                </p>
+                <div class="flex justify-between items-center">
+                    <a href="#" class="text-stone-800 font-semibold hover:underline">Apply here</a>
+                </div>
+            </div>
+
+            <!-- Sample Post 2 (Student Asking for Help) -->
+            <div class="bg-stone-200 rounded-3xl shadow-xl p-8 mb-8">
+                <div class="flex items-center space-x-6 mb-4">
+                    <img src="https://placehold.co/60x60/4B3621/F5F5DC?text=S1" alt="Student Profile" class="rounded-full border-2 border-stone-800">
+                    <div>
+                        <h4 class="font-semibold text-stone-800">Rahul Sharma</h4>
+                        <p class="text-sm text-stone-600">Student, Final Year, Electrical Engineering</p>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-stone-900">Need guidance on my final year project</h3>
+                <p id="post-text-2" class="text-stone-800 mb-4 leading-relaxed break-words">
+                    I'm working on a project related to smart grids and I'm facing some challenges with the data analysis. I would appreciate it if any alumni with expertise in this field could connect with me for some guidance. Thanks!
+                </p>
+                <div class="mt-4 flex space-x-4">
+                    <button class="bg-stone-300 text-stone-800 px-6 py-3 rounded-full text-sm font-semibold hover:bg-stone-400 transition duration-300">Comment</button>
+                    <button id="open-priya-profile" class="bg-stone-800 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-stone-900 transition duration-300 transform hover:scale-105">Connect</button>
+                </div>
+            </div>
+
+            <!-- Sample Post 3 (Alumni Sharing Knowledge) -->
+            <div class="bg-stone-200 rounded-3xl shadow-xl p-8 mb-8">
+                <div class="flex items-center space-x-6 mb-4">
+                    <img src="https://placehold.co/60x60/4B3621/F5F5DC?text=A2" alt="Alumni Profile" class="rounded-full border-2 border-stone-800">
+                    <div>
+                        <h4 class="font-semibold text-stone-800">Priya Patel</h4>
+                        <p class="text-sm text-stone-600">Alumni '18, Product Manager at a FinTech Startup</p>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-stone-900">My journey from campus to a startup</h3>
+                <p id="post-text-3" class="text-stone-800 mb-4 leading-relaxed break-words">
+                    Hey everyone! I'd like to share my experience transitioning from college to a fast-paced startup environment. It's been a wild ride, and I'd love to answer any questions you have about product management, building a career, or startup life. Feel free to ask below!
+                </p>
+            </div>
+        </div>
+
+        
+        <div class="w-full md:w-1/3 space-y-8">
+            <!-- Recommended Mentors Card -->
+            <div class="bg-stone-200 rounded-3xl shadow-xl p-8">
+                <h3 class="text-xl font-bold mb-4">Recommended Mentors for You</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center space-x-4">
+                        <img src="https://placehold.co/60x60/4B3621/F5F5DC?text=M1" alt="Mentor 1" class="rounded-full border-2 border-stone-800">
+                        <div>
+                            <h4 class="font-semibold text-stone-800">Amit Kumar</h4>
+                            <p class="text-sm text-stone-600">Data Scientist at Google</p>
+                            <button class="mt-1 text-xs text-stone-800 font-semibold hover:underline">Connect</button>
+                        </div>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <img src="https://placehold.co/60x60/4B3621/F5F5DC?text=M2" alt="Mentor 2" class="rounded-full border-2 border-stone-800">
+                        <div>
+                            <h4 class="font-semibold text-stone-800">Priya Singh</h4>
+                            <p class="text-sm text-stone-600">Product Manager at Microsoft</p>
+                            <button id="open-priya-profile-sidebar" class="mt-1 text-xs text-stone-800 font-semibold hover:underline">Connect</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Trending Opportunities Card -->
+            <div class="bg-stone-200 rounded-3xl shadow-xl p-8">
+                <h3 class="text-xl font-bold mb-4">Trending Opportunities</h3>
+                <ul class="space-y-4">
+                    <li class="border-b border-stone-300 pb-4 last:border-b-0 last:pb-0">
+                        <h4 class="font-semibold text-stone-800">Full-Stack Internship at Innovate Co.</h4>
+                        <p class="text-sm text-stone-600">Posted by an alumni from the 2018 batch.</p>
+                        <a href="#" class="text-xs text-stone-800 hover:underline">View Details</a>
+                    </li>
+                    <li class="border-b border-stone-300 pb-4 last:border-b-0 last:pb-0">
+                        <h4 class="font-semibold text-stone-800">Machine Learning Project Collaboration</h4>
+                        <p class="text-sm text-stone-600">Student seeking partners for a project.</p>
+                        <a href="#" class="text-xs text-stone-800 hover:underline">View Details</a>
+                    </li>
+                </ul>
+            </div>
+             
+        </div>
+    </main>
+
+    <!-- Post Modal -->
+    <div id="post-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900 bg-opacity-80 backdrop-blur-sm">
+        <div class="bg-stone-200 rounded-3xl shadow-xl w-full max-w-xl p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-stone-800">Create a New Post</h3>
+                <button id="close-post-modal" class="text-stone-600 hover:text-stone-900 transition duration-300">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <textarea id="post-textarea" class="w-full h-48 p-4 rounded-2xl border border-stone-400 bg-stone-300 text-stone-800 focus:ring-stone-500 focus:border-stone-500 mb-6 focus:outline-none transition duration-300" placeholder="What's on your mind?"></textarea>
+            <div class="flex justify-end space-x-4">
+                <button id="publish-post-btn" class="bg-stone-800 text-white font-semibold py-3 px-8 rounded-full hover:bg-stone-900 transition duration-300 transform hover:scale-105">Publish Post</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Alumni Profile View -->
+    <div id="alumni-profile-view" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900 bg-opacity-80 backdrop-blur-sm">
+        <div class="bg-stone-200 rounded-3xl shadow-xl w-full max-w-2xl p-8 space-y-8">
+            <div class="flex justify-between items-center">
+                <h3 class="text-2xl font-bold text-stone-800">Alumni Profile</h3>
+                <button id="close-profile-view" class="text-stone-600 hover:text-stone-900 transition duration-300">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+                <img src="https://placehold.co/120x120/4B3621/F5F5DC?text=A2" alt="Priya Patel" class="rounded-full border-4 border-stone-800">
+                <div class="text-center md:text-left">
+                    <h4 class="text-3xl font-bold text-stone-800 mb-1">Priya Patel</h4>
+                    <p class="text-xl text-stone-600">Alumni '18</p>
+                    <p class="text-lg text-stone-700 mt-2">Product Manager at FinTech Startup</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center md:justify-start space-x-4">
+                <button class="bg-stone-800 text-white font-semibold py-3 px-8 rounded-full hover:bg-stone-900 transition duration-300 transform hover:scale-105">
+                    Connect
+                </button>
+                <button id="open-contact-modal" class="bg-stone-300 text-stone-800 font-semibold py-3 px-8 rounded-full hover:bg-stone-400 transition duration-300">
+                    Request Contact Details
+                </button>
+            </div>
+            
+            <button id="back-to-dashboard" class="bg-stone-300 text-stone-800 font-semibold py-2 px-6 rounded-full hover:bg-stone-400 transition duration-300">
+                Back to Dashboard
+            </button>
+
+            <div class="space-y-4">
+                <h5 class="text-lg font-bold text-stone-800">About</h5>
+                <p class="text-stone-700 leading-relaxed">Priya has 5 years of experience in product management, specializing in user research, agile development, and market analysis. She is passionate about helping students navigate the transition from academia to the professional world and is open to providing guidance on career paths in technology.</p>
+            </div>
+
+            <div class="space-y-4">
+                <h5 class="text-lg font-bold text-stone-800">Skills & Expertise</h5>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-stone-300 text-stone-800 px-4 py-1 rounded-full text-sm">Product Management</span>
+                    <span class="bg-stone-300 text-stone-800 px-4 py-1 rounded-full text-sm">FinTech</span>
+                    <span class="bg-stone-300 text-stone-800 px-4 py-1 rounded-full text-sm">Agile Methodology</span>
+                    <span class="bg-stone-300 text-stone-800 px-4 py-1 rounded-full text-sm">User Experience (UX)</span>
+                    <span class="bg-stone-300 text-stone-800 px-4 py-1 rounded-full text-sm">Mentorship</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Contact Details Modal -->
+    <div id="contact-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900 bg-opacity-80 backdrop-blur-sm">
+        <div class="bg-stone-200 rounded-3xl shadow-xl w-full max-w-md p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-stone-800">Request Contact</h3>
+                <button id="close-contact-modal" class="text-stone-600 hover:text-stone-900 transition duration-300">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <p class="text-stone-700 mb-4">Are you sure you want to request contact details from Priya Patel? This will send a notification to her for approval.</p>
+            <div class="flex justify-end space-x-4">
+                <button id="cancel-contact-request" class="bg-stone-300 text-stone-800 font-semibold py-2 px-6 rounded-full hover:bg-stone-400 transition duration-300">Cancel</button>
+                <button id="send-contact-request" class="bg-stone-800 text-white font-semibold py-2 px-6 rounded-full hover:bg-stone-900 transition duration-300 transform hover:scale-105">Send Request</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openPostModalBtn = document.getElementById('open-post-modal');
+        const closePostModalBtn = document.getElementById('close-post-modal');
+        const postModal = document.getElementById('post-modal');
+        const alumniProfileView = document.getElementById('alumni-profile-view');
+        const closeProfileViewBtn = document.getElementById('close-profile-view');
+        const openContactModalBtn = document.getElementById('open-contact-modal');
+        const contactModal = document.getElementById('contact-modal');
+        const closeContactModalBtn = document.getElementById('close-contact-modal');
+        const cancelContactRequestBtn = document.getElementById('cancel-contact-request');
+        const mainDashboardView = document.getElementById('main-dashboard-view');
+        const backToDashboardBtn = document.getElementById('back-to-dashboard');
+        const openPriyaProfileBtn = document.getElementById('open-priya-profile');
+        const openPriyaProfileSidebarBtn = document.getElementById('open-priya-profile-sidebar');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        openPostModalBtn.addEventListener('click', () => {
+            postModal.classList.remove('hidden');
+        });
+
+        closePostModalBtn.addEventListener('click', () => {
+            postModal.classList.add('hidden');
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const modalBackgrounds = [postModal, alumniProfileView, contactModal];
+            
+            modalBackgrounds.forEach(modal => {
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal) {
+                        modal.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        openPriyaProfileBtn.addEventListener('click', () => {
+            mainDashboardView.classList.add('hidden');
+            alumniProfileView.classList.remove('hidden');
+        });
+
+        openPriyaProfileSidebarBtn.addEventListener('click', () => {
+            mainDashboardView.classList.add('hidden');
+            alumniProfileView.classList.remove('hidden');
+        });
+
+        backToDashboardBtn.addEventListener('click', () => {
+            alumniProfileView.classList.add('hidden');
+            mainDashboardView.classList.remove('hidden');
+        });
+
+        closeProfileViewBtn.addEventListener('click', () => {
+            alumniProfileView.classList.add('hidden');
+            mainDashboardView.classList.remove('hidden');
+        });
+
+        openContactModalBtn.addEventListener('click', () => {
+            contactModal.classList.remove('hidden');
+        });
+
+        closeContactModalBtn.addEventListener('click', () => {
+            contactModal.classList.add('hidden');
+        });
+
+        cancelContactRequestBtn.addEventListener('click', () => {
+            contactModal.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

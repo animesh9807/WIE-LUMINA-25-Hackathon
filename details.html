@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Setup - JIIT Alumni Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-stone-100 text-stone-800">
+    <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-stone-200 rounded-3xl shadow-xl p-8 max-w-2xl w-full">
+            <h2 class="text-4xl font-bold text-stone-900 text-center mb-4">Complete Your Profile</h2>
+            <p class="text-center text-lg text-stone-600 mb-8">Tell us a little about yourself to get started</p>
+
+            <form class="space-y-8">
+                <!-- User Info Section -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-stone-800">Your Information</h3>
+                    <div class="flex items-center space-x-6">
+                        <div class="relative w-24 h-24">
+                            <img src="https://placehold.co/96x96/4B3621/F5F5DC?text=P" alt="Profile" class="rounded-full border-4 border-stone-400 w-full h-full object-cover">
+                            <button class="absolute bottom-0 right-0 bg-stone-800 text-white rounded-full p-2 border-2 border-stone-200 hover:bg-stone-900 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zm-5.698 5.698l-3.212 3.212a1 1 0 00-.293.707v3.212a1 1 0 001 1h3.212a1 1 0 00.707-.293l3.212-3.212a1 1 0 000-1.414l-2.828-2.828a1 1 0 00-1.414 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <input type="text" placeholder="Your Full Name" class="flex-1 p-3 rounded-xl border border-stone-400 bg-stone-300 text-stone-800 focus:ring-stone-500 focus:border-stone-500 focus:outline-none transition duration-300">
+                    </div>
+                </div>
+
+                <!-- Professional Details Section (Conditional for Student/Alumni) -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-stone-800">Professional Details</h3>
+                    <!-- Alumni-specific fields -->
+                    <div class="space-y-4">
+                        <input type="text" placeholder="Current Role (e.g. Senior Software Engineer)" class="w-full p-3 rounded-xl border border-stone-400 bg-stone-300 text-stone-800 focus:ring-stone-500 focus:border-stone-500 focus:outline-none transition duration-300">
+                        <input type="text" placeholder="Company" class="w-full p-3 rounded-xl border border-stone-400 bg-stone-300 text-stone-800 focus:ring-stone-500 focus:border-stone-500 focus:outline-none transition duration-300">
+                        <input type="text" placeholder="Batch Year (e.g. 2015)" class="w-full p-3 rounded-xl border border-stone-400 bg-stone-300 text-stone-800 focus:ring-stone-500 focus:border-stone-500 focus:outline-none transition duration-300">
+                        <textarea placeholder="About You (brief professional summary)" class="w-full p-3 rounded-xl border border-stone-400 bg-stone-300 text-stone-800 focus:ring-stone-500 focus:border-stone-500 focus:outline-none transition duration-300 h-32"></textarea>
+                    </div>
+                    <!-- Student-specific fields -->
+                    <!-- Add student fields here, like: <input type="text" placeholder="Major">, etc. -->
+                </div>
+
+                <!-- Skills Section -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-stone-800">Skills & Expertise</h3>
+                    <textarea placeholder="List your key skills (e.g., Python, UI/UX, Data Science) separated by commas" class="w-full p-3 rounded-xl border border-stone-400 bg-stone-300 text-stone-800 focus:ring-stone-500 focus:border-stone-500 focus:outline-none transition duration-300 h-24"></textarea>
+                </div>
+
+                <!-- Contact Privacy Section -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-stone-800">Contact Privacy</h3>
+                    <p class="text-stone-700">Choose how others can view your contact information. LinkedIn is always public.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex flex-col space-y-2 bg-stone-300 p-4 rounded-xl">
+                            <span class="font-semibold text-stone-800">LinkedIn*</span>
+                            <div class="flex items-center space-x-3">
+                                <input type="text" placeholder="linkedin.com/in/yourhandle" class="flex-1 p-2 rounded-lg border border-stone-400 bg-stone-200 text-stone-800 focus:outline-none transition duration-300">
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-2 bg-stone-300 p-4 rounded-xl">
+                            <span class="font-semibold text-stone-800">Email (Gmail)</span>
+                            <div class="flex items-center space-x-3">
+                                <input type="text" placeholder="your.email@gmail.com" class="flex-1 p-2 rounded-lg border border-stone-400 bg-stone-200 text-stone-800 focus:outline-none transition duration-300">
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-stone-400 peer-focus:outline-none rounded-full peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-stone-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-stone-800"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-2 bg-stone-300 p-4 rounded-xl">
+                            <span class="font-semibold text-stone-800">GitHub</span>
+                            <div class="flex items-center space-x-3">
+                                <input type="text" placeholder="github.com/yourhandle" class="flex-1 p-2 rounded-lg border border-stone-400 bg-stone-200 text-stone-800 focus:outline-none transition duration-300">
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-stone-400 peer-focus:outline-none rounded-full peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-stone-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-stone-800"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-2 bg-stone-300 p-4 rounded-xl">
+                            <span class="font-semibold text-stone-800">Instagram</span>
+                            <div class="flex items-center space-x-3">
+                                <input type="text" placeholder="instagram.com/yourhandle" class="flex-1 p-2 rounded-lg border border-stone-400 bg-stone-200 text-stone-800 focus:outline-none transition duration-300">
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-stone-400 peer-focus:outline-none rounded-full peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-stone-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-stone-800"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-2 bg-stone-300 p-4 rounded-xl">
+                            <span class="font-semibold text-stone-800">Discord</span>
+                            <div class="flex items-center space-x-3">
+                                <input type="text" placeholder="your.handle#1234" class="flex-1 p-2 rounded-lg border border-stone-400 bg-stone-200 text-stone-800 focus:outline-none transition duration-300">
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-stone-400 peer-focus:outline-none rounded-full peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-stone-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-stone-800"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end mt-8">
+                    <button type="submit" class="bg-stone-800 text-white font-semibold py-3 px-8 rounded-full hover:bg-stone-900 transition duration-300 transform hover:scale-105">Save Profile</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

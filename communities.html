@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communities - JIIT Alumni Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5dc;
+            color: #4b3621;
+        }
+    </style>
+</head>
+<body class="bg-stone-100 text-stone-800">
+
+    <!-- Navbar -->
+    <nav class="bg-stone-200 shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-3xl font-bold text-stone-800">JIIT Alumni Connect</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#" class="text-stone-700 hover:text-stone-900 px-3 py-2 rounded-md text-base font-medium transition duration-300">Home</a>
+                            <a href="#" class="text-stone-700 hover:text-stone-900 px-3 py-2 rounded-md text-base font-medium transition duration-300">My Profile</a>
+                            <a href="#" class="text-stone-700 hover:text-stone-900 px-3 py-2 rounded-md text-base font-medium transition duration-300">Find Mentors</a>
+                            <a href="#" class="text-stone-700 hover:text-stone-900 px-3 py-2 rounded-md text-base font-medium transition duration-300">Communities</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button class="bg-stone-800 text-white px-6 py-3 rounded-full text-base font-medium hover:bg-stone-900 transition duration-300 transform hover:scale-105">Log Out</button>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-stone-600 hover:text-stone-900 hover:bg-stone-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-stone-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="text-stone-700 hover:bg-stone-300 hover:text-stone-900 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#" class="text-stone-700 hover:bg-stone-300 hover:text-stone-900 block px-3 py-2 rounded-md text-base font-medium">My Profile</a>
+                <a href="#" class="text-stone-700 hover:bg-stone-300 hover:text-stone-900 block px-3 py-2 rounded-md text-base font-medium">Find Mentors</a>
+                <a href="#" class="text-stone-700 hover:bg-stone-300 hover:text-stone-900 block px-3 py-2 rounded-md text-base font-medium">Communities</a>
+                <button class="w-full bg-stone-800 text-white px-4 py-2 rounded-full text-base font-medium hover:bg-stone-900 transition duration-300">Log Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-bold text-stone-900 mb-8 text-center">Communities</h1>
+        <p class="text-center text-lg text-stone-700 mb-12">Connect with fellow students and alumni who share your interests.</p>
+
+        <!-- Community Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Web Dev Community -->
+            <div class="bg-stone-200 rounded-3xl shadow-xl overflow-hidden">
+                <img src="7.jpg" alt="Web Development Community" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-2">Web Dev Community</h3>
+                    <p class="text-stone-800 leading-relaxed mb-4">
+                        A place for all things web development: front-end, back-end, and full-stack. Share projects, ask for help, and stay updated on the latest trends.
+                    </p>
+                    <button class="w-full bg-stone-800 text-white px-6 py-3 rounded-full font-medium hover:bg-stone-900 transition duration-300 transform hover:scale-105">Join Community</button>
+                </div>
+            </div>
+
+            <!-- Hackathon Community -->
+            <div class="bg-stone-200 rounded-3xl shadow-xl overflow-hidden">
+                <img src="8.jpg" alt="Hackathon Community" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-2">Hackathon Community</h3>
+                    <p class="text-stone-800 leading-relaxed mb-4">
+                        Find a team for your next hackathon, share ideas, and celebrate your wins. This community is for innovators and problem-solvers.
+                    </p>
+                    <button class="w-full bg-stone-800 text-white px-6 py-3 rounded-full font-medium hover:bg-stone-900 transition duration-300 transform hover:scale-105">Join Community</button>
+                </div>
+            </div>
+
+            <!-- Game Dev Community -->
+            <div class="bg-stone-200 rounded-3xl shadow-xl overflow-hidden">
+                <img src="9.webp" alt="Game Dev Community" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-2">Game Dev Community</h3>
+                    <p class="text-stone-800 leading-relaxed mb-4">
+                        From Unity to Unreal Engine, this community is for students and alumni passionate about creating games. Share your projects and get feedback.
+                    </p>
+                    <button class="w-full bg-stone-800 text-white px-6 py-3 rounded-full font-medium hover:bg-stone-900 transition duration-300 transform hover:scale-105">Join Community</button>
+                </div>
+            </div>
+            
+            <!-- Sports Community -->
+            <div class="bg-stone-200 rounded-3xl shadow-xl overflow-hidden">
+                <img src="10.png" alt="Sports Community" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-2">Sports Community</h3>
+                    <p class="text-stone-800 leading-relaxed mb-4">
+                        Stay connected with fellow sports enthusiasts. Organize events, find teammates, and celebrate victories together. All sports are welcome!
+                    </p>
+                    <button class="w-full bg-stone-800 text-white px-6 py-3 rounded-full font-medium hover:bg-stone-900 transition duration-300 transform hover:scale-105">Join Community</button>
+                </div>
+            </div>
+
+             <!-- Data Science Community -->
+            <div class="bg-stone-200 rounded-3xl shadow-xl overflow-hidden">
+                <img src="11.webp" alt="Data Science Community" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-2">Data Science Community</h3>
+                    <p class="text-stone-800 leading-relaxed mb-4">
+                        A hub for aspiring data scientists, analysts, and ML engineers. Discuss projects, share resources, and explore the world of data.
+                    </p>
+                    <button class="w-full bg-stone-800 text-white px-6 py-3 rounded-full font-medium hover:bg-stone-900 transition duration-300 transform hover:scale-105">Join Community</button>
+                </div>
+            </div>
+
+            <!-- Entrepreneurship Community -->
+            <div class="bg-stone-200 rounded-3xl shadow-xl overflow-hidden">
+                <img src="12.jpg" alt="Entrepreneurship Community" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-2">Entrepreneurship Community</h3>
+                    <p class="text-stone-800 leading-relaxed mb-4">
+                        For students and alumni with a startup mindset. Share business ideas, find co-founders, and get advice from successful entrepreneurs.
+                    </p>
+                    <button class="w-full bg-stone-800 text-white px-6 py-3 rounded-full font-medium hover:bg-stone-900 transition duration-300 transform hover:scale-105">Join Community</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
